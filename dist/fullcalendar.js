@@ -9,9 +9,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["moment", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["FullCalendar"] = factory(require("moment"), require("jquery"));
+		factory(require("moment"), require("jquery"));
 	else
-		root["FullCalendar"] = factory(root["moment"], root["jQuery"]);
+		factory(root["moment"], root["jQuery"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -7829,7 +7829,7 @@ var DayGrid = /** @class */ (function (_super) {
         var title = this.getCellDate(row, col).format(this.opt('dayPopoverFormat'));
         var content = $('<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
             '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
-            '<span class="fc-title">' +
+            '<span class="fc-title" title="' + util_1.htmlEscape(title) + '">' +
             util_1.htmlEscape(title) +
             '</span>' +
             '<div class="fc-clear"></div>' +
@@ -13363,7 +13363,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
                     '</div>' :
                 '') +
             (eventDef.title ?
-                '<div class="fc-title">' +
+                '<div class="fc-title" title="' + util_1.htmlEscape(eventDef.title) + '">' +
                     util_1.htmlEscape(eventDef.title) +
                     '</div>' :
                 '') +
@@ -13860,7 +13860,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
             }
         }
         titleHtml =
-            '<span class="fc-title">' +
+            '<span class="fc-title" title="' + util_1.htmlEscape(eventDef.title || '') + '">' +
                 (util_1.htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
                 '</span>';
         return '<a class="' + classes.join(' ') + '"' +
