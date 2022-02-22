@@ -258,7 +258,7 @@ export default class DayGridEventRenderer extends EventRenderer {
     }
 
     titleHtml =
-      '<span class="fc-title">' +
+      '<span class="fc-title" title="'+ htmlEscape(eventDef.title || '') +'">' +
         (htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
       '</span>'
 

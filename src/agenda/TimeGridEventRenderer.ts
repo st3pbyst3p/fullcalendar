@@ -116,7 +116,7 @@ export default class TimeGridEventRenderer extends EventRenderer {
             ''
             ) +
           (eventDef.title ?
-            '<div class="fc-title">' +
+            '<div class="fc-title" title="'+ htmlEscape(eventDef.title) +'">' +
               htmlEscape(eventDef.title) +
             '</div>' :
             ''

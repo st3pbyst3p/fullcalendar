@@ -699,7 +699,7 @@ export default class DayGrid extends InteractiveDateComponent {
     let content = $(
       '<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
         '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
-        '<span class="fc-title">' +
+        '<span class="fc-title" title="'+ htmlEscape(title) +'">' +
           htmlEscape(title) +
         '</span>' +
         '<div class="fc-clear"></div>' +
